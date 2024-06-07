@@ -15,8 +15,6 @@ export default {
         });
     },
     swipeEvent(e) {
-        console.info("swipeEvent()");
-        console.info(e.direction);
         if (e.direction == "right") {
             app.terminate();
         }
