@@ -1,0 +1,3 @@
+<stack class="bg" onswipe="swipeEvent">
+     <qrcode value="0465001052869" class="qrcode"></qrcode>
+</stack>
