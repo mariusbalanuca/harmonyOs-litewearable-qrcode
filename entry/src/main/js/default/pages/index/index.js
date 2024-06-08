@@ -1,6 +1,5 @@
 import app from '@system.app';
 import brightness from '@system.brightness';
-import device from '@system.device';
 
 export default {
     data: {
