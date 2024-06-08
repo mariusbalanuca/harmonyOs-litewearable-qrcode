@@ -3,7 +3,21 @@
     height: 408px;
     top: 36px;
 }
-.bg {
+.container {
+    left: 0px;
+    top: 0px;
     width: 100%;
     height: 100%;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    width: 408px;
+    font-size: 30px;
+    text-align: center;
 }

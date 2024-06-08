@@ -1,9 +1,19 @@
 import app from '@system.app';
 import brightness from '@system.brightness';
+import device from '@system.device';
 
 export default {
+    data: {
+        index: 0,
+        showElement: false,
+        showValue: false,
+        todolist: ["0465001052869"],
+        // todolist: [],
+    },
     onInit() {
-       console.info("onInit()");
+        if (this.todolist.length > 0) {
+            this.showElement = true;
+        }
         brightness.setKeepScreenOn({
             keepScreenOn: true,
             success: function() {
@@ -18,6 +28,9 @@ export default {
         if (e.direction == "right") {
             app.terminate();
         }
+    },
+    showValue() {
+        this.showValue = !this.showValue;
     },
     onDestroy() {},
 }

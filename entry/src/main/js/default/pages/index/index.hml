@@ -1,3 +1,13 @@
-<stack class="bg" onswipe="swipeEvent">
-     <qrcode value="0465001052869" class="qrcode"></qrcode>
-</stack>
+<swiper class="container" index="{{ index }}" onswipe="swipeEvent">
+    <div class="swiper">
+            <text class="message" show="{{ !showElement }}">No QR code added</text>
+        <stack class="swiper" if="{{ todolist.length > 0 }}">
+            <qrcode value="{{ todolist[index] }}" class="qrcode" on:click="showValue"
+                    show="{{ showElement && showValue }}">
+            </qrcode>
+            <div class="swiper" on:click="showValue">
+                <text class="message" show="{{ !showValue }}">{{ todolist[index] }}</text>
+            </div>
+        </stack>
+    </div>
+</swiper>
