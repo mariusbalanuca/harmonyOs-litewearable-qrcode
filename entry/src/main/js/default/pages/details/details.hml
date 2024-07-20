@@ -1,0 +1,5 @@
+<div class="container" onswipe="swipeEvent" on:click="clickGoBack">
+    <text class="message">{{ qrCodeList[index] }} </text>
+    <text class="emptyBox">x</text>
+    <image style="width: 50px; height: 50px;" src="/common/remove.png" on:click="remove"></image>
+</div>

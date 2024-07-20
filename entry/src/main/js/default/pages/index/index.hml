@@ -1,13 +1,12 @@
-<swiper class="container" index="{{ index }}" onswipe="swipeEvent">
-    <div class="swiper">
-            <text class="message" show="{{ !showElement }}">No QR code added</text>
-        <stack class="swiper" if="{{ todolist.length > 0 }}">
-            <qrcode value="{{ todolist[index] }}" class="qrcode" on:click="showValue"
-                    show="{{ showElement && showValue }}">
-            </qrcode>
-            <div class="swiper" on:click="showValue">
-                <text class="message" show="{{ !showValue }}">{{ todolist[index] }}</text>
+<div class="container">
+    <swiper class="container" loop="false">
+        <div class="swiper" for="{{ qrCodeList }}">
+            <div class="swiper" if="{{ qrCodeList.length > 0 }}">
+                <stack class="swiper">
+                    <qrcode value="{{ $item }}" class="qrcode" on:click="showValue({{$idx}})">
+                    </qrcode>
+                </stack>
             </div>
-        </stack>
-    </div>
-</swiper>
+        </div>
+    </swiper>
+</div>

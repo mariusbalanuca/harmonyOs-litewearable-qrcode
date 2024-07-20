@@ -10,6 +10,18 @@
   "deviceConfig": {
   },
   "module": {
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.VIBRATE",
+        "reason": "Need for confirming action",
+        "usedScene": {
+          "ability": [
+            "FormAbility"
+          ],
+          "when": "inuse"
+        }
+      }
+    ],
     "deviceType": [
       "liteWearable"
     ],
@@ -29,7 +41,11 @@
     "js": [
       {
         "pages": [
-          "pages/index/index"
+          "pages/index/index",
+          "pages/add/add",
+          "pages/details/details",
+          "pages/show/show",
+          "pages/keyboard/keyboard"
         ],
         "name": "default"
       }

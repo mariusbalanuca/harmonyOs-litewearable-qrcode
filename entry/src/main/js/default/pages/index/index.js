@@ -1,35 +1,32 @@
-import app from '@system.app';
-import brightness from '@system.brightness';
+import router from '@system.router';
+import storage from '@system.storage';
 
 export default {
     data: {
-        index: 0,
-        showElement: false,
-        showValue: false,
-        todolist: ["0465001052869"],
-        // todolist: [],
+        qrCodeList: []
     },
     onInit() {
-        if (this.todolist.length > 0) {
-            this.showElement = true;
-        }
-        brightness.setKeepScreenOn({
-            keepScreenOn: true,
-            success: function() {
-                console.info("screen on success");
+        storage.get({
+            key: 'qrCodeList',
+            success: function (data) {
+                console.log('data: ' + data);
+                if (data.length > 0) {
+                    this.qrCodeList = data.split(",");
+                }
             },
-            fail: function() {
-                console.info("screen on failed");
-            }
-        });
-    },
-    swipeEvent(e) {
-        if (e.direction == "right") {
-            app.terminate();
-        }
-    },
-    showValue() {
-        this.showValue = !this.showValue;
-    },
-    onDestroy() {},
+            fail: function (data, code) {
+                console.log('index storage get fail, code: ' + code + ', data: ' + data);
+            },
+            complete: function () {
+                console.log('index call complete');
+                router.replace({
+                    uri: 'pages/show/show',
+                    params: {
+                        qrCodeList: this.qrCodeList
+                    }
+                });
+        },
+    });
+}
+,
 }

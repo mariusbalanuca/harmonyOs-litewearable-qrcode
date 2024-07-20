@@ -1,0 +1,19 @@
+.container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.emptyBox {
+    font-size: 30px;
+    width: 100%;
+    color: white;
+}
+.message {
+    width: 408px;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+}

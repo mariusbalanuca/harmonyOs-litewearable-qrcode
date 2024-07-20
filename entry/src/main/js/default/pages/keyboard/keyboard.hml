@@ -1,0 +1,13 @@
+<div class="container" onswipe="touchMove">
+    <div class="container-column">
+        <text class="title">{{ input.join("") }}</text>
+        <text class="emptyBox">x</text>
+        <list class="keyboard-column">
+                <list-item class="container-row" for="{{ (index1, row) in keyboardLetters }}" tid="id">
+                    <div class="keyboard" for="{{ (index2, letter) in row }}" tid="id" on:click="selectLetter({{(index1,index2)}})">
+                        <text class="letter">{{ letter }}</text>
+                    </div>
+            </list-item>
+        </list>
+    </div>
+</div>

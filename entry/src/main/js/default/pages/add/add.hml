@@ -1,0 +1,3 @@
+<div class="container" onswipe="swipeEvent">
+    <image style="width: 64px; height: 64px;" src="/common/add.png" on:click="add"></image>
+</div>

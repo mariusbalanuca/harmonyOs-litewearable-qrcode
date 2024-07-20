@@ -1,0 +1,13 @@
+<div class="container" onswipe="swipeEvent">
+    <swiper index="{{ index }}" class="container" loop="false">
+        <div class="swiper" for="{{ qrCodeList }}">
+            <div class="swiper" if="{{ qrCodeList.length > 0 }}">
+                <stack class="swiper">
+                    <text class="message">{{ $idx + 1 }}/{{ qrCodeList.length }}</text>
+                    <qrcode value="{{ $item }}" class="qrcode" on:click="showValue({{ $idx }})">
+                    </qrcode>
+                </stack>
+            </div>
+        </div>
+    </swiper>
+</div>
